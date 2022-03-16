@@ -24,6 +24,8 @@ custom:
     # to all tasks. Optional of course.
     environment:
       foo: bar
+    secrets:
+      password: /Path/to/ssm/password
 
     role: arn:aws:iam::123456789369:role/myRole
 
@@ -37,6 +39,8 @@ custom:
           foo: wut
           # you can also use cloudformation references with eg serverless-pseudo-parameters
           myArn: #{MyResource.Arn}
+        secrets:
+          password: /Path/to/custom/ssm/password
         cpu: 512  # optional, defaults to 100% -> 1024, see cloudformation docs for valid values
         memory: 2.0GB  # optional, defaults to 2.0GB
 ```
