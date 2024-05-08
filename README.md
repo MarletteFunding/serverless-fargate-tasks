@@ -57,6 +57,7 @@ custom:
     
     datadog:
       ssm_api_key: /datadog/api_key  # Replace with the name of your SSM parameter (if in same account as the task), or full ARN
+      image_account_id: ${aws:accountId} # Required
       essential: true  # Optional, marks container as essential. Default is false.
       cpu: 10  # Optional, sets the CPU units for the individual container. Defaults to DataDog recommended 10 units.
       memory: 256  # Optional, sets the soft memory limit for the individual container. Defaults to DataDog recommended 256. 
